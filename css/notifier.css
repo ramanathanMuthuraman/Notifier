@@ -37,19 +37,17 @@
 }
 
 @-webkit-keyframes show-hide {
-     0%   {opacity: 0;}
-    25%  {opacity: 0.25;}
-    50%  {opacity: 0.50;}
-    75%  {opacity: 0.75;}
-    100% {opacity: 0.5;}
+     0%   {opacity: 0.1;}
+    10%  {opacity: 0.8;}
+    30%  {opacity: 0.9;}
+    100%  {opacity: 0.8;}
 }
 
 @keyframes show-hide {
-     0%   {opacity: 0;}
-    25%  {opacity: 0.25;}
-    50%  {opacity: 0.50;}
-    75%  {opacity: 0.75;}
-    100% {opacity: 0.5;}
+     0%   {opacity: 0.1;}
+    10%  {opacity: 0.8;}
+    30%  {opacity: 0.9;}
+    100%  {opacity: 0.8;}
 }
 .notifierPopup{
 	background: #ccc;
