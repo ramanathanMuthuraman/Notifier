@@ -10,7 +10,7 @@ var notifier = new Notifier({
 });
 ```
 
-The actionElement is the HTML element whose click action is linked to the notification generation.
+The actionElement should be provided with any valid CSS selector whose click action is linked to the notification generation.
 
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
