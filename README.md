@@ -6,7 +6,7 @@ Include the notifier.css and notifier.js in the html file. Activate the plugin b
 
 ```
 var notifier = new Notifier({
-    text: "Notifier on click"
+    text: "Notifier on load"
 });
 ```
 
