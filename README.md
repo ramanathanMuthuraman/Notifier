@@ -6,11 +6,11 @@ Include the notifier.css and notifier.js in the html file. Activate the plugin b
 
 ```
 var notifier = new Notifier({
-    actionElement: {any valid CSS selector}
+    text: "Notifier on click"
 });
 ```
 
-The actionElement should be provided with any valid CSS selector whose click action is linked to the notification generation.
+The text can be either a String or an Array which will be content of the Notifier. If the text is an Array, for each array element new notifiers will be creted.
 
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
