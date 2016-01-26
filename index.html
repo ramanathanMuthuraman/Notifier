@@ -18,7 +18,14 @@
         <script src="js/notifier.js"></script>
         <script type="text/javascript">
         var notifier = new Notifier({
-                actionElement: '#notifierBtn'
+                text: "Notifier on load"
+            });
+        </script>
+        <script type="text/javascript">
+            document.querySelector("#notifierBtn").addEventListener("click",function(){
+                var notifier = new Notifier({
+                    text: "Notifier on click"
+                });
             });
         </script>
 
