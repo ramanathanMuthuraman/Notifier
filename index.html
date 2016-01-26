@@ -13,12 +13,12 @@
             <h1 class="space"> Notifier</h1>
             <h4 class="space"> A simple JS plugin to create notification popups </h4>
             <p class="space">Click the below button to generate notification popups</p>
-            <input class="notifierBtn space" type="button" value="Click">
+            <input id="notifierBtn" class="actionBtn space" type="button" value="Click">
         </div>
         <script src="js/notifier.js"></script>
         <script type="text/javascript">
         var notifier = new Notifier({
-                actionElement: '.notifierBtn'
+                actionElement: '#notifierBtn'
             });
         </script>
 
