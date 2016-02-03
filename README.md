@@ -9,8 +9,10 @@ var notifier = new Notifier({
     text: ["Hi there !!", "Welcome to Notifier JS", "Notifier on load example"]
 });
 ```
+### Parameters
 
-The text can either be a String or an Array which will be content of the Notifier. If the text is an Array, for each array element new notifiers will be creted.
+#### text   :Text to be displayed in the notifier
+#### cls    :Custom class to be added to the notifier
 
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
