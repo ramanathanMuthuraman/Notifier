@@ -6,7 +6,8 @@ Include the notifier.css and notifier.js in the html file. Activate the plugin b
 
 ```
 var notifier = new Notifier({
-    text: ["Hi there !!", "Welcome to Notifier JS", "Notifier on load example"]
+    text: "Welcome to Notifier JS",
+    cls: "custom-cls"
 });
 ```
 **Parameters**
