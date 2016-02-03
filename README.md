@@ -9,10 +9,10 @@ var notifier = new Notifier({
     text: ["Hi there !!", "Welcome to Notifier JS", "Notifier on load example"]
 });
 ```
-### Parameters
+#### Parameters
 
-#### text   :Text to be displayed in the notifier
-#### cls    :Custom class to be added to the notifier
+text   :Text to be displayed in the notifier
+cls    :Custom class to be added to the notifier
 
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
