@@ -12,9 +12,9 @@ var notifier = new Notifier({
 ```
 **Parameters**
 
-*text*   :Text to be displayed in the notifier
+*text*   :  Text to be displayed in the notifier
 
-*cls*    :Custom class to be added to the notifier
+*cls*    :  Custom class to be added to the notifier
 
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
