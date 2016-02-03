@@ -1,19 +1,19 @@
 (function() {
 	//Constructor method
     this.Notifier = function(param){
-    	//Create container, if it isn't already present in the document 
+    	//Create container, if it isn't already present in the document
     	if(!document.querySelectorAll(".notifierArea").length){
     		var notifierArea =  document.createElement("div");
 			notifierArea.setAttribute("class", "notifierArea");
 			notifierArea.style.height =  window.innerHeight+"px";
 			document.getElementsByTagName("body")[0].appendChild(notifierArea);
     	}
-    	generate(param.text);
+    	generate(param);
 
     }
     //el : The HTML element to bind the event for
-    //s  : The events string 
-    //fn : The function to call on the occurence of any of the events specified 
+    //s  : The events string
+    //fn : The function to call on the occurence of any of the events specified
     this.addListenerMulti = function(el, s, fn) {
 	  var evts = s.split(' ');
 	  for (var i=0, iLen=evts.length; i<iLen; i++) {
@@ -21,17 +21,18 @@
 	  }
 	}
 	//text : The text to be displayed in the popup
-    this.generate = function(text){
+    this.generate = function(param){
+    	var customClass= param.cls? " "+param.cls : "";
     	var notifierArea = document.querySelector(".notifierArea");
-    	var content = [].concat(text);
+    	var content = [].concat(param.text);
     	for(var i=0;i<content.length;i++){
-    		var newNotifier = document.createElement("div");		
+    		var newNotifier = document.createElement("div");
 			newNotifier.innerHTML = content[i];
-			notifierArea.appendChild(newNotifier);	
-			newNotifier.setAttribute("class", "notifierPopup");
+			notifierArea.appendChild(newNotifier);
+			newNotifier.setAttribute("class", "notifierPopup"+customClass);
 			addListenerMulti(newNotifier,"animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", remove);
     	}
-		
+
 	}
 	//Remove the notifier element
 	this.remove = function(){
