@@ -18,15 +18,17 @@
         <script src="js/notifier.js"></script>
         <script type="text/javascript">
         var notifier = new Notifier({
-                text: ["Hi there !!", "Welcome to Notifier JS", "Notifier on load example" ]
+                text: "Hi there !! Welcome to Notifier JS",
+                cls: "custom-cls",
+                manualDismiss: true
             });
-        </script>
-        <script type="text/javascript">
-            document.querySelector("#notifierBtn").addEventListener("click",function(){
-                var notifier = new Notifier({
-                    text: "Notifier on click example"
-                });
+
+        document.querySelector("#notifierBtn").addEventListener("click",function(){
+            var notifier = new Notifier({
+                text: "Notifier on click example"
             });
+        });
+
         </script>
 
     </body>
