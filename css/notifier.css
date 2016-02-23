@@ -35,7 +35,7 @@ html,body{
 	-ms-flex-pack: center;
 	justify-content: center;
 	height:100%;
-	
+
 
 }
 .space{
@@ -50,34 +50,55 @@ html,body{
   outline: none;
   box-shadow: 3px 3px 5px #404232;
   cursor: pointer;
-
 }
 
+.notifier-content{
+	padding: 10px;
+	width: 90%;
+}
+
+.closeBtn::before{
+	content: 'X';
+}
+
+.closeBtn{
+	font-weight: bold;
+	cursor: pointer;
+	align-self: flex-start;
+	padding: 5px;
+	color: #e82908;
+    font-size: 12px;
+}
 .actionBtn:active {
 	box-shadow: 1px 1px 3px #404232;
 }
 
-@-webkit-keyframes show-hide {
+@-webkit-keyframes show {
 	0%   {opacity: 0.1;}
-    10%  {opacity: 0.8;}
-    30%  {opacity: 0.9;}
-    60%  {opacity: 0.8;}
-    90%  {opacity: 0.1;}
+    30%  {opacity: 0.8;}
+    90%  {opacity: 1;}
+
+}
+
+@keyframes show {
+	0%   {opacity: 0.1;}
+    30%  {opacity: 0.8;}
+    90%  {opacity: 1;}
+
+}
+
+@-webkit-keyframes hide {
+	0%   {opacity: 0.9;}
     100%  {opacity: 0;}
 }
 
-@keyframes show-hide {
-	0%   {opacity: 0.1;}
-    10%  {opacity: 0.8;}
-    30%  {opacity: 0.9;}
-    60%  {opacity: 0.8;}
-    90%  {opacity: 0.1;}
+@keyframes hide {
+	0%   {opacity: 0.9;}
     100%  {opacity: 0;}
 }
 .notifierPopup{
 	background: #fff;
 	margin: 10px;
-	padding: 10px;
 	border-radius: 10px;
 	box-shadow: 5px 5px 5px #888888;
 	height:50px;
@@ -90,11 +111,15 @@ html,body{
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-	overflow: hidden;   
+	overflow: hidden;
 	word-wrap: break-word;
-	-webkit-animation-name: show-hide;
-	animation-name: show-hide;
-    -webkit-animation-duration: 3s;
-    animation-duration: 5s;
+	-webkit-animation-name: show;
+	animation-timing-function: ease-in-out;
+	animation-name: show;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
 }
 
+.custom-cls{
+	background: #fd1;
+}
