@@ -22,21 +22,48 @@
 	}
 	//text : The text to be displayed in the popup
     this.generate = function(param){
-    	var customClass= param.cls? " "+param.cls : "";
-    	var notifierArea = document.querySelector(".notifierArea");
-    	var content = [].concat(param.text);
-    	for(var i=0;i<content.length;i++){
-    		var newNotifier = document.createElement("div");
-			newNotifier.innerHTML = content[i];
-			notifierArea.appendChild(newNotifier);
-			newNotifier.setAttribute("class", "notifierPopup"+customClass);
-			addListenerMulti(newNotifier,"animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", remove);
-    	}
 
+    	var notifierArea = document.querySelector(".notifierArea");
+		var newNotifier = document.createElement("div");
+		var newNotifierContent = document.createElement("div");
+		newNotifierContent.innerHTML = param.text;
+		newNotifier.appendChild(newNotifierContent);
+		notifierArea.appendChild(newNotifier);
+		newNotifierContent.setAttribute("class","notifier-content");
+		newNotifier.setAttribute("class", "notifierPopup"+addCustomClass(param.cls));
+		if(param.manualDismiss){
+			addCloseBtn(newNotifier);
+		}else{
+			setTimeout(function(){
+				hide(newNotifier);
+			},3000);
+
+		}
+	}
+	//newNotifier : The dom element to be bound to the event
+	this.cssAnimationEvent = function(newNotifier){
+		addListenerMulti(newNotifier,"animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd", remove);
+	}
+	//newNotifier : The dom element to be bound to the event
+	this.addCloseBtn = function(newNotifier){
+		var closeBtn = document.createElement("div");
+		closeBtn.className = "closeBtn";
+		newNotifier.appendChild(closeBtn).addEventListener("click",hide);
+	}
+	//cls : User specified class, if any
+	this.addCustomClass = function(cls){
+		return cls? " "+cls : "";
+	}
+	//Hide the notifier element
+	this.hide = function(node){
+		// parent node on close button click or the dom from manualDismiss
+		node = this.parentNode || node;
+		node.style.animationName = "hide";
+		cssAnimationEvent(node);
 	}
 	//Remove the notifier element
 	this.remove = function(){
-		 this.parentNode.removeChild(this);
+		this.parentNode.removeChild(this);
 	}
 }());
 
