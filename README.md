@@ -16,5 +16,7 @@ var notifier = new Notifier({
 
 *cls*    :  Custom class to be added to the notifier
 
+*autoDismiss*   : Set auto dismiss to true, for closing the notifier automatically 
+
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
