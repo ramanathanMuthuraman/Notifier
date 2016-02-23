@@ -6,8 +6,9 @@ Include the notifier.css and notifier.js in the html file. Activate the plugin b
 
 ```
 var notifier = new Notifier({
-    text: "Welcome to Notifier JS",
-    cls: "custom-cls"
+    text: "Hi there !! Welcome to Notifier JS",
+    cls: "custom-cls",
+    manualDismiss: true
 });
 ```
 **Parameters**
@@ -16,7 +17,7 @@ var notifier = new Notifier({
 
 *cls*    :  Custom class to be added to the notifier
 
-*autoDismiss*   : Set auto dismiss to true, for closing the notifier automatically 
+*manualDismiss*   : Set manaul dismiss to true, for closing the notifier manually 
 
 # Demo 
 [Click here] (http://rawgit.com/ramanathanmuthuraman/Notifier/master/index.html)
